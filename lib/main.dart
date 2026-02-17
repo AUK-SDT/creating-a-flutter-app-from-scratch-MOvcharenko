@@ -12,7 +12,10 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
-      theme: ThemeData(colorScheme: .fromSeed(seedColor: Colors.grey)),
+      theme: ThemeData(
+        colorScheme: .fromSeed(seedColor: Colors.grey),
+        fontFamily: 'ATLA',
+      ),
       debugShowCheckedModeBanner: false,
       home: const Homework(),
     );
@@ -43,6 +46,7 @@ class Body extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final theme = Theme.of(context);
     return Column(
       mainAxisSize: .min,
       mainAxisAlignment: .center,
@@ -50,15 +54,63 @@ class Body extends StatelessWidget {
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Container(height: 100, width: 100, color: Colors.amberAccent,),
-            Container(height: 100, width: 100, color: Colors.blueAccent),
+            Container(
+              height: 120,
+              width: 120,
+              color: Colors.amberAccent,
+              child: Column(
+                mainAxisAlignment: .center,
+                children: [
+                  Image.asset('assets/images/air.png', height: 80, width: 80),
+                  const SizedBox(height: 8),
+                  Text("Air", style: theme.textTheme.titleMedium?.copyWith()),
+                ],
+              ),
+            ),
+            Container(
+              height: 120,
+              width: 120,
+              color: Colors.blueAccent,
+              child: Column(
+                mainAxisAlignment: .center,
+                children: [
+                  Image.asset('assets/images/water.png', height: 80, width: 80),
+                  const SizedBox(height: 8),
+                  Text("Water", style: theme.textTheme.titleMedium?.copyWith()),
+                ],
+              ),
+            ),
           ],
         ),
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Container(height: 100, width: 100, color: Colors.green),
-            Container(height: 100, width: 100, color: Colors.red),
+            Container(
+              height: 120,
+              width: 120,
+              color: Colors.lightGreen,
+              child: Column(
+                mainAxisAlignment: .center,
+                children: [
+                  Image.asset('assets/images/earth.png', height: 80, width: 80),
+                  const SizedBox(height: 8),
+                  Text("Earth", style: theme.textTheme.titleMedium?.copyWith()),
+                ],
+              ),
+            ),
+            Container(
+              height: 120,
+              width: 120,
+              color: Colors.redAccent,
+              child: Column(
+                mainAxisAlignment: .center,
+                children: [
+                  Image.asset('assets/images/fire.png', height: 80, width: 80),
+                  const SizedBox(height: 8),
+                  Text("Fire", style: theme.textTheme.titleMedium?.copyWith()),
+                ],
+              ),
+            ),
           ],
         ),
       ],

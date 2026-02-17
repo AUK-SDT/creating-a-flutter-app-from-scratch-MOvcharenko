@@ -59,3 +59,8 @@ flutter:
 
   assets:
     - assets/images/
+
+  fonts:
+    - family: ATLA
+      fonts:
+        - asset:  assets/fonts/AvatarAirbender.ttf
